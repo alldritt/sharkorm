@@ -50,10 +50,12 @@
     // key1/value1
     p = [[[[KeyValue query] whereWithFormat:@"value = %@", value1] fetch] firstObject];
     XCTAssert(p, @"Failed to retrieve KeyValue record by value1");
+    XCTAssertEqualObjects(p.key, key1, @"Keys don't match for key1");
     
     //  key2/value2
     p = [[[[KeyValue query] whereWithFormat:@"value = %@", value2] fetch] firstObject];
     XCTAssert(p, @"Failed to retrieve KeyValue record by value2");
+    XCTAssertEqualObjects(p.key, key2, @"Keys don't match for key2");
 }
 
 - (void)test_boolean {
@@ -81,13 +83,11 @@
     p = [[[[KeyValue query] whereWithFormat:@"value = %@", value1] fetch] firstObject];
     XCTAssert(p, @"Failed to retrieve KeyValue record by value1");
     XCTAssertEqualObjects(p.key, key1, @"Keys don't match for key1");
-    XCTAssertEqualObjects(p.value, value1, @"Values don't match for key1");
 
     //  key2/value2
     p = [[[[KeyValue query] whereWithFormat:@"value = %@", value2] fetch] firstObject];
     XCTAssert(p, @"Failed to retrieve KeyValue record by value2");
     XCTAssertEqualObjects(p.key, key2, @"Keys don't match for key2");
-    XCTAssertEqualObjects(p.value, value2, @"Values don't match for key2");
 }
 
 - (void)test_integer {
@@ -115,13 +115,11 @@
     p = [[[[KeyValue query] whereWithFormat:@"value = %@", value1] fetch] firstObject];
     XCTAssert(p, @"Failed to retrieve KeyValue record by value1");
     XCTAssertEqualObjects(p.key, key1, @"Keys don't match for key1");
-    XCTAssertEqualObjects(p.value, value1, @"Values don't match for key1");
     
     //  key2/value2
     p = [[[[KeyValue query] whereWithFormat:@"value = %@", value2] fetch] firstObject];
     XCTAssert(p, @"Failed to retrieve KeyValue record by value2");
     XCTAssertEqualObjects(p.key, key2, @"Keys don't match for key2");
-    XCTAssertEqualObjects(p.value, value2, @"Values don't match for key2");
 }
 
 - (void)test_double {
@@ -149,13 +147,11 @@
     p = [[[[KeyValue query] whereWithFormat:@"value = %@", value1] fetch] firstObject];
     XCTAssert(p, @"Failed to retrieve KeyValue record by value1");
     XCTAssertEqualObjects(p.key, key1, @"Keys don't match for key1");
-    XCTAssertEqualObjects(p.value, value1, @"Values don't match for key1");
     
     //  key2/value2
     p = [[[[KeyValue query] whereWithFormat:@"value = %@", value2] fetch] firstObject];
     XCTAssert(p, @"Failed to retrieve KeyValue record by value2");
     XCTAssertEqualObjects(p.key, key2, @"Keys don't match for key2");
-    XCTAssertEqualObjects(p.value, value2, @"Values don't match for key2");
 }
 
 - (void)test_date {
@@ -183,13 +179,11 @@
     p = [[[[KeyValue query] whereWithFormat:@"value = %@", value1] fetch] firstObject];
     XCTAssert(p, @"Failed to retrieve KeyValue record by value1");
     XCTAssertEqualObjects(p.key, key1, @"Keys don't match for key1");
-    XCTAssertEqualObjects(p.value, value1, @"Values don't match for key1");
     
     //  key2/value2
     p = [[[[KeyValue query] whereWithFormat:@"value = %@", value2] fetch] firstObject];
     XCTAssert(p, @"Failed to retrieve KeyValue record by value2");
     XCTAssertEqualObjects(p.key, key2, @"Keys don't match for key2");
-    XCTAssertEqualObjects(p.value, value2, @"Values don't match for key2");
 }
 
 @end
