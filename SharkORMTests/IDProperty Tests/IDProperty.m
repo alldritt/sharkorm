@@ -270,6 +270,18 @@
     value.name = @"Mark";
     value.date = [NSDate date];
     
+    TestObject* value2 = [TestObject new];
+    value2.name = @"Mark";
+    value2.date = value.date;
+
+    TestObject* value3 = [TestObject new];
+    value3.name = @"Not Mark";
+    value3.date = value.date;
+
+    //  Make sure TestObject's isEqual is working
+    XCTAssertEqualObjects(value, value2, @"Seed objects are not equal");
+    XCTAssertNotEqualObjects(value, value3, @"Seed objects are equal");
+
     KeyValue* p = [KeyValue new];
     p.key = key;
     p.value = value;
