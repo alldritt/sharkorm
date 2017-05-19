@@ -37,6 +37,8 @@
     [SharkORM rawQuery:@"DELETE FROM SmallPerson;"];
     [SharkORM rawQuery:@"DELETE FROM StringIdObject;"];
     [SharkORM rawQuery:@"DELETE FROM MostObjectTypes;"];
+    [SharkORM rawQuery:@"DELETE FROM MostObjectTypes;"];
+    [SharkORM rawQuery:@"DELETE FROM KeyValue;"];
 }
 
 - (void)databaseError:(SRKError *)error {

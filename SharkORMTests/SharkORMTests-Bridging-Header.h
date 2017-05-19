@@ -10,3 +10,4 @@
 #import "StringIdObject.h"
 #import "StringIdRelatedObject.h"
 #import "WidePerson.h"
+#import "KeyValue.h"
