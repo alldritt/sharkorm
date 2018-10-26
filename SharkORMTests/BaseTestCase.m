@@ -14,6 +14,7 @@
 
     [SharkORM setDelegate:self];
     [SharkORM openDatabaseNamed:@"Persistence"];
+    [SharkORM rawQuery:@"DROP TABLE IF EXISTS RawQueryTest;"];
     self.currentError = nil;
     
 }
@@ -30,9 +31,7 @@
 
 - (void)cleardown {
     [SharkORM rawQuery:@"DELETE FROM Person;"];
-    [SharkORM rawQuery:@"DELETE FROM PersonSwift;"];
     [SharkORM rawQuery:@"DELETE FROM Department;"];
-    [SharkORM rawQuery:@"DELETE FROM DepartmentSwift;"];
     [SharkORM rawQuery:@"DELETE FROM Location;"];
     [SharkORM rawQuery:@"DELETE FROM SmallPerson;"];
     [SharkORM rawQuery:@"DELETE FROM StringIdObject;"];
