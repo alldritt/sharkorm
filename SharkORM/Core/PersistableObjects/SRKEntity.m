@@ -1593,11 +1593,7 @@ static void setPropertyCharPTRIMP(SRKEntity* self, SEL _cmd, char* aValue) {
     
     NSMutableDictionary* newDic = [NSMutableDictionary new];
     for (NSString* f in self.fieldNames) {
-        id value = [self getField:f];
-        
-        if (!value)
-            value = [NSNull null];
-        [newDic setObject:value forKey:f];
+        [newDic setObject:[self getField:f] forKey:f];
     }
     
     return [NSDictionary dictionaryWithDictionary:newDic];
